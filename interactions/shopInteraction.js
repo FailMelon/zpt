@@ -108,7 +108,7 @@ async function showBuyRods(interaction) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Create shop embed
   const rodsEmbed = new EmbedBuilder()
@@ -170,7 +170,7 @@ async function showBuyBait(interaction) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Create shop embed
   const baitEmbed = new EmbedBuilder()
@@ -247,7 +247,7 @@ async function showSellFish(interaction) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Count fish in inventory by name
   const fishCounts = {};
@@ -353,7 +353,7 @@ async function buyRod(interaction, rodName) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Find the selected rod
   const selectedRod = rods.find(rod => rod.name === rodName);
@@ -434,7 +434,7 @@ async function buyBait(interaction, baitName, quantity = 1) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Find the selected bait
   const selectedBait = baits.find(bait => bait.name === baitName);
@@ -512,7 +512,7 @@ async function sellFish(interaction, fishName, sellAll = false) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Find matching fish in inventory
   const matchingFish = userProfile.inventory.fish.filter(fishItem => {
@@ -867,7 +867,7 @@ async function showBuyTraps(interaction) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Create shop embed
   const trapsEmbed = new EmbedBuilder()
@@ -941,7 +941,7 @@ async function buyTrap(interaction, trapName, quantity = 1) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Find the selected trap
   const selectedTrap = traps.find(trap => trap.name === trapName);
@@ -1022,7 +1022,7 @@ async function showBuyAquariums(interaction) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Create shop embed
   const aquariumsEmbed = new EmbedBuilder()
@@ -1084,7 +1084,7 @@ async function showBuyDecorations(interaction) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Create shop embed
   const decorationsEmbed = new EmbedBuilder()
@@ -1151,7 +1151,7 @@ async function buyAquarium(interaction, aquariumName) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Find the selected aquarium
   const selectedAquarium = aquariums.find(a => a.name === aquariumName);
@@ -1237,7 +1237,7 @@ async function buyDecoration(interaction, decorationName, quantity = 1) {
   const userId = interaction.user.id;
   
   // Get user profile
-  const userProfile = await userManager.getUser(userId);
+  const userProfile = await userManager.getUser(userId, true);
   
   // Find the selected decoration
   const selectedDecoration = decorations.find(d => d.name === decorationName);
